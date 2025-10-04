@@ -1,0 +1,55 @@
+# version: '3'  
+services:  
+  fedora:  
+    build: fedora/
+    #container_name: fedora_ansible
+    volumes:
+      - ./share:/code
+      - ~/.ssh/id_ed25519.pub:/key.pub:ro  # Только для чтения
+    ports:
+      - "2220:22"      
+    networks:
+      - app_network
+
+  centos:  
+    build: centos7/
+    volumes:
+      - ./share:/code
+      - ~/.ssh/id_ed25519.pub:/key.pub:ro  # Только для чтения
+
+    ports:
+      - "2221:22"      
+    networks:
+      - app_network
+
+  ubuntu:  
+    build: ubuntu/
+    volumes: 
+      - ./share:/code  
+      - ~/.ssh/id_ed25519.pub:/key.pub:ro  # Только для чтения
+      # - bootstrap:/bootstrap.sh:ro
+      
+    ports:
+      - "2222:22"      
+    networks:
+      - app_network
+
+volumes:
+  share:
+    driver: local
+  # key: 
+  #   #~/.ssh/id_ed25519.pub:/key.pub:ro
+  #   - type: bind
+  #     source: ~/.ssh/id_ed25519.pub
+  #     target: key.pub
+  #     read_only: true  
+  
+  
+
+  # bootstrap:
+  #   driver: local
+  #   Mountpoint: ../bootstrap.sh
+
+networks:
+  app_network:
+    driver: bridge
