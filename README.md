@@ -52,7 +52,7 @@
 ![answer](./img/an-01.2.png)
 
 3. 
-![answer](./img/an-01.3.png)
+Смотри следующий скриншот 
 
 4.
 ![answer](./img/an-01.4.png)
@@ -77,7 +77,7 @@
 Хост добавить, просто `ctrl+C` и `ctrl+v` сделать из `test.yml`
 
 11.
-![answer](./img/an-01.11.png)
+![answer](./img/an-01.10.png)
 
 
 ## Задача 2
@@ -99,5 +99,7 @@ echo '$ANSIBLE_VAULT;1.1;AES256
 
 3.
 Повторю тут этот скриншот, так как уже сделал это
-![answer](./img/an-01.11.png)
+![answer](./img/an-01.10.png)
+
+
 
